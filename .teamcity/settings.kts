@@ -67,6 +67,7 @@ object SshUpload : BuildType({
     triggers {
         vcs {
             id = "TRIGGER_1"
+            triggerRules = "+:**"
             branchFilter = ""
         }
     }
