@@ -4,6 +4,7 @@ import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.buildSteps.sshUpload
 import jetbrains.buildServer.configs.kotlin.failureConditions.BuildFailureOnText
 import jetbrains.buildServer.configs.kotlin.failureConditions.failOnText
+import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -60,6 +61,13 @@ object SshUpload : BuildType({
                 git commit -m "adding a file"
                 git push origin
             """.trimIndent()
+        }
+    }
+
+    triggers {
+        vcs {
+            id = "TRIGGER_1"
+            branchFilter = ""
         }
     }
 
