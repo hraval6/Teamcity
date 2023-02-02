@@ -38,8 +38,8 @@ project {
 
     params {
         password("Git_AccessToken", "credentialsJSON:eba0f86b-4aea-441c-b295-f70db9b050f7", display = ParameterDisplay.HIDDEN)
-        param("username", "harshit")
         param("Git_username", "hraval6@gmail.com")
+        param("username", "harshit")
     }
 }
 
