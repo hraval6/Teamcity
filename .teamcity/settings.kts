@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.SSHUpload
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.buildSteps.sshUpload
 import jetbrains.buildServer.configs.kotlin.failureConditions.BuildFailureOnText
 import jetbrains.buildServer.configs.kotlin.failureConditions.failOnText
@@ -48,15 +49,13 @@ object SshUpload : BuildType({
     }
 
     steps {
-        sshUpload {
-            name = "UPLOAD"
+        script {
+            name = "git pull from repo"
             id = "RUNNER_1"
-            transportProtocol = SSHUpload.TransportProtocol.SCP
-            sourcePath = """C:\Users\hrava\Pictures\* => pictures"""
-            targetUrl = """192.168.1.18:C:\Users\hrava\Desktop"""
-            authMethod = password {
-                username = "Harshit Raval"
-            }
+            scriptContent = """
+                git checkout main
+                git pull
+            """.trimIndent()
         }
     }
 
