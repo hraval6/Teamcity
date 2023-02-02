@@ -41,7 +41,7 @@ project {
 
 object SshUpload : BuildType({
     templates(Settings)
-    name = "SSH Upload"
+    name = "git pull"
 
     vcs {
         root(DslContext.settingsRoot)
