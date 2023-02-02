@@ -38,6 +38,7 @@ project {
 
     params {
         param("username", "harshit")
+        param("git_username", "hraval6")
     }
 }
 
