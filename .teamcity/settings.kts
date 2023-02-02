@@ -55,6 +55,10 @@ object SshUpload : BuildType({
             scriptContent = """
                 git checkout main
                 git pull
+                echo "hello world" > newfile
+                git add newfile
+                git commit -m "adding a file"
+                git push origin
             """.trimIndent()
         }
     }
