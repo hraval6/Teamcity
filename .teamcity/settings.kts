@@ -39,7 +39,6 @@ project {
     params {
         password("Git_AccessToken", "credentialsJSON:eba0f86b-4aea-441c-b295-f70db9b050f7", display = ParameterDisplay.HIDDEN)
         param("Git_username", "hraval6@gmail.com")
-        param("username", "harshit")
     }
 }
 
@@ -56,7 +55,7 @@ object GitOperation : BuildType({
             name = "git pull from repo"
             id = "RUNNER_1"
             scriptContent = """
-                git remote set-url origin https://hraval6@gmail.com:%Git_AccessToken%@github.com/hraval6/Teamcity.git
+                git remote set-url origin https://%Git_username%:%Git_AccessToken%@github.com/hraval6/Teamcity.git
                 git pull
                 echo "hello world" > newfile
                 git add newfile
