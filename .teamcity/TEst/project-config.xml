@@ -3,7 +3,7 @@
   <name>TEst</name>
   <parameters>
     <param name="Git_AccessToken" value="credentialsJSON:eba0f86b-4aea-441c-b295-f70db9b050f7" spec="password display='hidden'" />
-    <param name="Git_username" value="hraval6" />
+    <param name="Git_username" value="hraval6@gmail.com" />
     <param name="username" value="harshit" />
   </parameters>
   <project-extensions>
