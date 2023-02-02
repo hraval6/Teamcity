@@ -55,7 +55,7 @@ object GitOperation : BuildType({
             name = "git pull from repo"
             id = "RUNNER_1"
             scriptContent = """
-                git remote set-url origin https://%Git_username%:%Git_AccessToken%@github.com/hraval6/Teamcity.git
+                git remote set-url origin https://hraval6:%Git_AccessToken%@github.com/hraval6/Teamcity.git
                 git pull
                 echo "hello world" > newfile
                 git add newfile
